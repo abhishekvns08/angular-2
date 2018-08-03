@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>app-employee</title>
+</head>
+<body>
+<button (click)="displayDetails()">{{btnTxt}}</button>
+
+<br/><br/>
+
+<div id="logo" align="right" ><img  [src]="imgPath"/></div>
+<h1>Employee Details </h1>
+<!--   <table [class]="classtouse" [class.class3]="usingclass3"> -->
+	   <table *ngIf="showDetails" [style.color]="clr" [style.background-color]="bgr" [class.class3]="usingclass3">
+  		<tr>
+  		<td [attr.colspan]="colSpan"> Employee Details</td>
+  		</tr>
+  		<tr>
+			<td>First Name</td>
+			<td [innerHtml]="firstName"></td>
+		</tr>
+		<tr>	
+			<td>Last Name </td>
+			<td [innerHtml]="lastName"></td>
+		</tr>
+		<tr>
+			<td>Full Name</td>
+			<td>{{empName()}}</td>
+		</tr>
+		<tr>	
+			<td>Age</td>
+			<td>{{age}}</td> 
+		</tr>
+		<tr>	
+			<td>Department</td>
+			<td>{{department}}</td> 
+ 		</tr>
+  </table>
+</body>
+</html>
